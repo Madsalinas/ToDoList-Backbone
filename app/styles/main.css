@@ -1,0 +1,86 @@
+
+
+/* ********************
+   ****<-- TAGS -->****
+   ******************** */
+
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+h1 {
+  padding-bottom: 0px;
+  height: 50px;
+}
+
+ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  with: 500px;
+}
+
+li {
+  board: 1px solid #ccc;
+  background: #eee;
+  padding: 5px 10px;
+  color: #000;
+  margin: 5px;
+}
+
+li span {
+  padding-left: 10px;
+}
+
+/* ***********************
+   ****<-- CLASSES -->****
+   *********************** */
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.Instructions {
+  color: gray;
+  font-style: oblique;
+  padding-left: 50%;
+}
+
+.Task-Board {
+  padding: 25px;
+  background-color: aliceblue;
+
+  min-height: 100%;
+}
+
+.task-title {
+  padding: 4px 10px;
+  background-color: lightsalmon;
+
+}
+
+.Task-List {
+  min-height: 500px;
+  max-height: 100%;
+  background-color: lightblue;
+
+}
+
+.input-tasks {
+  padding-left: 30%;
+  }
+
+.title {
+  padding-left: 40%;
+}
+
+/* *********************
+   ****<--  IDs  -->****
+   ********************* */
+
