@@ -80,6 +80,20 @@ li span {
   padding-left: 40%;
 }
 
+
+.suspend {
+    font-family:sans-serif;
+    color:blue;
+    cursor:pointer;
+    float: right;
+    margin-right: 10px;
+}
+
+.closeX {
+  color: red;
+  float: right;
+}
+
 /* *********************
    ****<--  IDs  -->****
    ********************* */
