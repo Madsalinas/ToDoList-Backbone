@@ -1,3 +1,12 @@
 {
-  "generator-mocha": {}
+  "generator-mocha": {},
+  "generator-backbone": {
+    "appPath": "app",
+    "appName": "Aowp",
+    "coffee": false,
+    "testFramework": "mocha",
+    "templateFramework": "lodash",
+    "sassBootstrap": false,
+    "includeRequireJS": true
+  }
 }

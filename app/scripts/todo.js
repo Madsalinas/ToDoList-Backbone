@@ -6,57 +6,52 @@
 
 
 function hideli () {
-    if(this.status == "toDo"){
+  var spanId = this.id.replace("cb_", "");
+  var toDone = document.getElementById("li_" + spanId);
 
-    var spanId = this.id.replace("cb_", "");
-    var toDone = document.getElementById("li_" + spanId);
-    document.getElementById("cb_" + spanId).checked = true;
+    if(this.status == "toDo"){
     document.getElementById("lista_C").appendChild(toDone);
 
     this.status = "Done";
-    console.log(toDone + " hide to done -- status "+this.status);
 
     }else {
-        var spanId = this.id.replace("cb_", "");
-        var toDone = document.getElementById("li_" + spanId);
         document.getElementById("lista").appendChild(toDone);
 
         this.status = "toDo";
-        console.log(toDone + " hide to toDo -- status "+this.status);
+
     }
 
 }
 
 function unTrack () {
   var spanId = this.id.replace("btn_", "");
-
   document.getElementById("li_" + spanId).style.display = "none";
 }
 
 
 function changeStatus () {
-if(this.status != "cancelled"){
-    var spanId = this.id.replace("span_", "");
-    var toDone = document.getElementById("li_" + spanId);
-    document.getElementById("cb_" + spanId).checked = false;
-    document.getElementById("cb_" + spanId).style.display = "none";
-    document.getElementById("lista_S").appendChild(toDone);
-    this.style.textDecoration = "line-through";
+  var spanId = this.id.replace("span_", "");
+  var toDone = document.getElementById("li_" + spanId);
+  var daCb = document.getElementById("cb_" + spanId);
 
+if(this.status != "cancelled"){
+
+    daCb.checked = false;
+    daCb.style.display = "none";
+    document.getElementById("lista_S").appendChild(toDone);
+
+    this.style.textDecoration = "line-through";
     this.status = "cancelled";
 
-    console.log(toDone + " change to cancel -- status "+this.status);
     }else {
-    var spanId = this.id.replace("span_", "");
-    var toDone = document.getElementById("li_" + spanId);
-    document.getElementById("cb_" + spanId).status = "toDo";
-    document.getElementById("cb_" + spanId).style.display = "inline";
+
+    daCb.status = "toDo";
+    daCb.style.display = "inline";
     document.getElementById("lista").appendChild(toDone);
 
     this.style.textDecoration = "none";
     this.status = "toDo";
 
-    console.log(toDone + " change to toDo -- status "+this.status);
     }
 
 }
@@ -65,14 +60,8 @@ if(this.status != "cancelled"){
 
 function addItem(Item, itemText) {
     var date = new Date();
-    var unicid= "";
-    var idAN = 0;
-    unicid = "" + date.getMinutes() + date.getSeconds() + date.getMilliseconds();
-
-    idAN = parseInt(unicid);
-
-    unicid = idAN.toString(36);
-
+    var idAN= "" + date.getDay() + date.getHours() + date.getMinutes() + date.getSeconds() + date.getMilliseconds();
+    var unicid = parseInt(idAN).toString(36);
 
     var listItem = document.createElement("li");
     listItem.id = "li_" + unicid;
@@ -92,8 +81,7 @@ function addItem(Item, itemText) {
 
     var cross = document.createElement("button");
     cross.id = "btn_" + unicid;
-    cross.style.color = "red";
-    cross.style.float = "right";
+    cross.className = "closeX";
     cross.innerText =  "X";
     cross.onclick =  unTrack;
 
