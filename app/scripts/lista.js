@@ -149,6 +149,7 @@
         render: function(){
 
             var self = this;
+
             $(this.el).append("<button id='add'>Add list Item</button>");
 
             _(this.collection.models).each(function(item){ // in case collection is not empty

@@ -92,21 +92,3 @@ function addItem(Item, itemText) {
 
 };
 
-var inItemText = document.getElementById("inItemText");
-inItemText.focus();
-
-
-inItemText.onkeyup = adding;
-
-    function adding(e) {
-        //e.which (13) -> ENTER
-if(e.which == 13) {
-
-    var itemText = inItemText.value;
-    if (!itemText || itemText == " ") {
-        return false;
-    }
-    addItem(document.getElementById("lista"), itemText);
-    inItemText.select();
-}
-};
